@@ -20,6 +20,7 @@ body {
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .btn:hover {
@@ -34,6 +35,5 @@ body {
 }
 
 .btn-alt:hover {
-    background-color: rgb(230, 201, 252);
-    border-color: transparent;
+    background-color: rgb(216, 166, 255);
 }
