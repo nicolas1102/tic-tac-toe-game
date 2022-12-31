@@ -22,115 +22,18 @@ body {
     cursor: pointer;
 }
 
-.btn:hover{
-    background-color: rgb(79,10,190);
-    border-color: rgb(79,10,190);
+.btn:hover {
+    background-color: rgb(79, 10, 190);
+    border-color: rgb(79, 10, 190);
 }
 
-.btn-alt{
+.btn-alt {
     background-color: transparent;
     border-color: transparent;
     color: rgb(140, 0, 255);
 }
 
-.btn-alt:hover{
+.btn-alt:hover {
     background-color: rgb(230, 201, 252);
     border-color: transparent;
-}
-
-
-
-
-h1 {
-    margin: 0;
-}
-
-main {
-    padding-top: 2rem;
-    width: 70%;
-    margin: 4rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#game-configuration {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#game-configuration ol {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-#game-configuration li {
-    background-color: rgb(226, 192, 253);
-    padding: 1rem;
-    margin: 0 1rem;
-    width: 12rem;
-    border-radius: 4px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-#game-configuration li article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-}
-
-#game-configuration li article h2,
-#game-configuration li article h3,
-#game-configuration li article p {
-    text-align: center;
-    margin: 0;
-}
-
-#game-configuration li article h2 {
-    font-size: 1rem;
-    color: rgb(35, 35, 35);
-}
-
-#game-configuration li article h3 {
-    font-size: 1.5rem;
-    color: rgb(80, 0, 146);
-}
-
-#game-configuration li article p {
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgb(40, 0, 73);
-}
-
-#active-game {
-    margin: 0 auto;
-    width: 17rem;
-}
-
-#active-game p {
-    text-align: center;
-}
-
-#active-player-name {
-    color: rgb(40, 0, 73);
-    font-weight: bold;
-}
-
-#active-game ol {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem 0.5rem;
-    padding: 0;
-}
-
-#active-game li {
-    margin: auto;
-    background-color: rgb(215, 187, 247);
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3px;
 }
