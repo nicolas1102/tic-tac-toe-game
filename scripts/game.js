@@ -1,8 +1,32 @@
+function resetGameStatus() {
+    gameIsOver = false;
+    activePlayer = 0;
+    currentRound = 1;
+    gameOverElement.firstElementChild.innerHTML = 'You won, <span id="winner-name">PLAYER NAME</span>!';
+    gameOverElement.style.display = 'none';
+
+    let gameBoardIndex = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++){
+            gameData[i][j] = 0;
+            const gameBoardItemElement = gameBoardElement.children[gameBoardIndex];
+            console.dir(gameBoardItemElement);
+            gameBoardItemElement.textContent = '';
+            gameBoardItemElement.classList.remove('disabled');
+            gameBoardIndex++;
+        }
+    }
+
+}
+
 function starNewGame() {
-    // if (players[0].name === '' || players[1].name === '') {
-    //     alert('Please set custom player name for both players!');
-    //     return;
-    // }
+    if (players[0].name === '' || players[1].name === '') {
+        alert('Please set custom player name for both players!');
+        return;
+    }
+
+    resetGameStatus();
+
     activePlayerNameElement.textContent = players[activePlayer].name.toUpperCase();
     activeGameSectionElement.style.display = 'block';
 }
@@ -53,8 +77,8 @@ function chechForGameOver() {
 }
 
 function selectGameField(event) {
-    // verify that the click is not out of any button
-    if (event.target.tagName != 'LI') {
+    // verify that the click is not out of any button (and if el juego esta terminado no permitir seleccionar otro boton)
+    if (event.target.tagName != 'LI' || gameIsOver) {
         return;
     }
 
@@ -74,14 +98,26 @@ function selectGameField(event) {
     gameData[selectedRow][selectedColumn] = activePlayer + 1;
 
     const winnerId = chechForGameOver();
-    console.log(winnerId);
 
-    if (winnerId === -1) {
-
+    // Verify if the game is not over
+    if (winnerId !== 0) {
+        endGame(winnerId);
     }
 
     currentRound++;
 
     switchPlayer();
 
+}
+
+function endGame(winnerId) {
+    gameIsOver = true;
+    gameOverElement.style.display = 'block';
+
+    if (winnerId > 0) {
+        // gameOverElement.children[0].children[0].textContent = players[winnerId - 1].name;
+        gameOverElement.firstElementChild.firstElementChild.textContent = players[winnerId - 1].name;
+    } else {
+        gameOverElement.firstElementChild.textContent = 'It\'s a draw';
+    }
 }

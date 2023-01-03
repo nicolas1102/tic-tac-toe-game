@@ -2,6 +2,7 @@
 let editedPlayer = 0; 
 let activePlayer = 0;
 let currentRound = 1;
+let gameIsOver = false;
 const players = [
     {
         name: '',
@@ -31,6 +32,7 @@ const configErrorsElement = document.getElementById('config-errors');
 const divInputPlayerNameElement = document.getElementById('div-input-player-name');
 const activeGameSectionElement = document.getElementById('active-game');
 const activePlayerNameElement = document.getElementById('active-player-name');
+const gameOverElement = document.getElementById('game-over');
 
 // buttons
 const editPlayer1BtnElement = document.getElementById('edit-player-1-btn');
